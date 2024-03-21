@@ -73,7 +73,7 @@ courses = [
 
     bien105 := Course("BIEN105", "Circulation Physiology", [bien110]),
     bien125 := Course("BIEN125", "Biotechnology & Molecular Engineering", [bien101]),
-    bien140a := Course("BIEN140A", "Biomaterials", [bien101, math010b, phys040b]),
+    bien140a := Course("BIEN140A", "Biomaterials A", [bien101, math010b, phys040b]),
 
     bien115 := Course("BIEN115", "Quantitative Physiology", [bien110]),
     bien120 := Course("BIEN120", "Biosystems & Signal Analysis", [bien105]),
@@ -87,9 +87,22 @@ courses = [
     bien175b := Course("BIEN175B", "Senior Design B", [bien175a]),
 
     bien175c := Course("BIEN175C", "Senior Design C", [bien175b]),
+
+
+    TEbien136 := Course("TE_BIEN136", "Tissue Engineering", [biol005b, chem001c, bien140a]),
+    TEbien137 := Course("TE_BIEN137", "Advanced Biomechanics", [bien110, biol005b, math046, phys040a]),
+    TEbien138 := Course("TE_BIEN138", "Wound Repair", [bien105, biol005a]),
+    TEbien140b := Course("TE_BIEN140B", "Biomaterials B", [phys040b]),
+    TEbien142 := Course("TE_BIEN142", "Intro Biomedical Optical Imaging", [phys040c, math010b]),
+    TEbien159 := Course("TE_BIEN159", "Dynamics of Biological Systems", [biol005b, math046]),
+    TEbien160 := Course("TE_BIEN160", "Biomedical Imaging", [bien120]),
+    TEbien165 := Course("TE_BIEN165", "Biomolecular Engineering", [bien135]),
+    TEbien166 := Course("TE_BIEN166", "Bioinspired Engineering for Energy", [bien140a]),
+    TEbien167 := Course("TE_BIEN167", "Medical Diagnostics", [bien130]),
+    TEbien168 := Course("TE_BIEN168", "Bioengineering Analysis & Modeling", [biol005a, cs009a])
 ]
 
-
+TEs = [course for course in courses if "TE" in course.number]
 
 
 current = Plan("current")
@@ -124,3 +137,4 @@ second_offering.courses = [[[bien001, chem001a, engl001a, math009a],
                  [bien175c]]]  # 4th year Spring
 second_offering.check_prereqs()
 
+print(TEs)
